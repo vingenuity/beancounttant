@@ -12,3 +12,4 @@ test:
   script:
     - coverage run -m pytest
     - coverage report
+    - coverage html
