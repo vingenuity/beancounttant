@@ -3,7 +3,7 @@ default:
 
 stages:
   - test
-  - deploy
+  - pages
 
 test:
   image: python:3.8
@@ -14,7 +14,21 @@ test:
   script:
     - coverage run -m pytest
     - coverage report
+    - coverage html
     - coverage xml
   artifacts:
+    paths:
+      - htmlcov/
     reports:
       cobertura: coverage.xml
+
+pages:
+  dependencies:
+    - test
+  script:
+    - ls -R
+    - mv htmlcov/ public/reports/coverage/
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
