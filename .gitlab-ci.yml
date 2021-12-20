@@ -14,18 +14,7 @@ test:
   script:
     - coverage run -m pytest
     - coverage report
-    - coverage html
+    - coverage xml
   artifacts:
     paths:
-      - htmlcov/
-
-deploy:
-  dependencies:
-    - test
-  script:
-    - ls
-    - mv htmlcov/ public/reports/coverage/
-  artifacts:
-    paths:
-      - public
-    expire_in: 1 week
+      - coverage.xml
