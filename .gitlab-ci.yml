@@ -16,5 +16,5 @@ test:
     - coverage report
     - coverage xml
   artifacts:
-    paths:
-      - coverage.xml
+    reports:
+      cobertura: coverage.xml
