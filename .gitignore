@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Coverage data files & reports
+.coverage
+htmlcov/
+
+# Don't commit config file due to personal data contained within
+config.json
+
+# Ignore test .beancount and .pdf files for now
+*.beancount
+*.pdf

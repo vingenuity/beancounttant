@@ -1,0 +1,3 @@
+beancount
+context_menu == 1.2.2
+coverage == 5.5
