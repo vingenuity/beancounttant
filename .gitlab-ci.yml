@@ -1,15 +1,16 @@
 default:
-  image: python:3.8
-  before_script:
-    - apt-get update
-    - apt-get install -y python3-pip
-    - pip install -r requirements.txt
+  image: alpine:3.15
 
 stages:
   - test
   - deploy
 
 test:
+  image: python:3.8
+  before_script:
+    - apt-get update
+    - apt-get install -y python3-pip
+    - pip install -r requirements.txt
   script:
     - coverage run -m pytest
     - coverage report
@@ -22,6 +23,7 @@ deploy:
   dependencies:
     - test
   script:
+    - ls
     - mv htmlcov/ public/reports/coverage/
   artifacts:
     paths:
