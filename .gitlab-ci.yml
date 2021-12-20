@@ -25,6 +25,8 @@ test:
 pages:
   dependencies:
     - test
+  variables:
+    GIT_CLEAN_FLAGS: -ffdx -e htmlcov/
   script:
     - ls -R
     - mv htmlcov/ public/reports/coverage/
