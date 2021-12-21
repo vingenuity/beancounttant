@@ -29,7 +29,9 @@ pages:
     GIT_CLEAN_FLAGS: -ffdx -e htmlcov/
   script:
     - ls -R
-    - mv htmlcov public/reports/coverage
+    - rm -rf public/reports/coverage/
+    - mkdir public/reports/coverage/
+    - mv htmlcov/ public/reports/coverage/
   artifacts:
     paths:
       - public
