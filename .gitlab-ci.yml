@@ -30,7 +30,7 @@ pages:
   script:
     - ls -R
     - rm -rf public/reports/coverage/
-    - mkdir public/reports/coverage/
+    - mkdir -p public/reports/coverage/
     - mv htmlcov/ public/reports/coverage/
   artifacts:
     paths:
